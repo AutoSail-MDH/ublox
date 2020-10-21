@@ -1,0 +1,50 @@
+# Configuration settings for ZED-F9P device
+
+debug: 1                    # Range 0-4 (0 means no debug statements will print)
+
+device: /dev/ttyACM0        # Path to device port
+frame_id: gps               # ROS name prepended to frames produced by node
+rate: 4                     # in Hz
+nav_rate: 4                 # in Hz
+
+dynamic_model: sea
+                     # Max Alt: 500m
+                     # Max Horizontal Velocity: 25 m/s,
+                     # Max Vertical Velocity: 5 m/s
+uart1:
+  baudrate: 38400
+  in: 16                     # RTCM 3
+  out: 16                    # No UART out for rover
+
+# TMODE3 Config
+tmode3: 1                   # Survey-In Mode
+sv_in:
+  reset: false              # True: disables and re-enables survey-in (resets)
+                            # False: Disables survey-in only if TMODE3 is
+                            # disabled
+  min_dur: 300              # Survey-In Minimum Duration [s]
+  acc_lim: 1                # Survey-In Accuracy Limit [m]
+
+arp:
+  position_hp: True
+
+# Which satelites are contacted
+gnss:
+  galileo: true
+  gps: true
+  glonass: true
+  beidou: true
+  qzss: true
+
+dgnss_mode: 3
+
+# Messages to be published, see https://github.com/KumarRobotics/ublox
+# for avaliable message structure
+
+publish:
+  nav:
+    poshllh: True
+    heading: True
+
+  sensor_msg:
+    Imu: True
