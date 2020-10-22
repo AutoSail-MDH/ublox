@@ -1,4 +1,5 @@
-# Configuration settings for ZED-F9P device
+# Configuration settings for ZED-F9P device, see https://github.com/KumarRobotics/ublox
+# for avaliable configurations
 
 debug: 1                    # Range 0-4 (0 means no debug statements will print)
 
@@ -12,9 +13,9 @@ dynamic_model: sea
                      # Max Horizontal Velocity: 25 m/s,
                      # Max Vertical Velocity: 5 m/s
 uart1:
-  baudrate: 38400
+  baudrate: 115200
   in: 16                     # RTCM 3
-  out: 16                    # No UART out for rover
+  out: 0                    # No UART out for rover
 
 # TMODE3 Config
 tmode3: 1                   # Survey-In Mode
@@ -38,9 +39,7 @@ gnss:
 
 dgnss_mode: 3
 
-# Messages to be published, see https://github.com/KumarRobotics/ublox
-# for avaliable message structure
-
+# Messages to be published
 publish:
   nav:
     poshllh: True
