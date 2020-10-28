@@ -4,7 +4,7 @@ project(ublox_msgs)
 find_package(catkin REQUIRED COMPONENTS message_generation ublox_serialization std_msgs sensor_msgs)
 
 add_message_files(DIRECTORY msg)
-generate_messages(DEPENDENCIES std_msgs sensor_msgs)
+generate_messages(DEPENDENCIES std_msgs sensor_msgs ublox_msgs)
 
 catkin_package(
   INCLUDE_DIRS include

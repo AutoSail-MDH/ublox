@@ -1722,10 +1722,10 @@ void HpPosRecProduct::callbackNavRelPosNed(const ublox_msgs::NavRELPOSNED9 &m) {
     imu_.orientation_covariance[4] = 1000.0;
     imu_.orientation_covariance[8] = 1000.0;
     // When heading is reported to be valid, use accuracy reported in 1e-5 deg units
-    if (m.flags & ublox_msgs::NavRELPOSNED9::FLAGS_REL_POS_HEAD_VALID)
-    {
+     if (m.flags & ublox_msgs::NavRELPOSNED9::FLAGS_REL_POS_HEAD_VALID)
+     {
       imu_.orientation_covariance[8] = pow(m.accHeading * 1e-5 / 180.0 * M_PI, 2);
-    }
+     }
 
     imu_pub.publish(imu_);
   }
