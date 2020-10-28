@@ -41,6 +41,8 @@ dgnss_mode: 3
 
 # Messages to be published
 publish:
+  all: true
+publish:
   nav:
     poshllh: True
     heading: True
