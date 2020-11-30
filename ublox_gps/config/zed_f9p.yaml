@@ -40,7 +40,7 @@ gnss:
 dgnss_mode: 3
 
 # Messages to be published
-publish:
+#publish:
 #  all: true
 
 publish:
